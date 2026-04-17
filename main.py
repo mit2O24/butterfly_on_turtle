@@ -12,6 +12,8 @@ def Draw_circle(color, size, is_fill):
 
     t.color(color)
     t.circle(size)
+    # if is_fill: t.fillcolor(color)
+
     if is_fill: t.end_fill()
 
 t.pendown()
@@ -43,48 +45,31 @@ t.circle(-50, 60)
 
 # внешние крылья
 
-t.penup()
-t.goto(80, 70)
-t.pendown()
-Draw_circle('red', 60, True)
-
-t.penup()
-t.goto(-80, 70)
-t.pendown()
-Draw_circle('red', 60, True)
+def Draw_wing(color, size, cord):
+    t.penup()
+    t.goto(cord)
+    t.pendown()
+    Draw_circle(color, size, True)
 
 
-t.penup()
-t.goto(50, 10)
-t.pendown()
-Draw_circle('red', 30, True)
 
-t.penup()
-t.goto(-50, 10)
-t.pendown()
-Draw_circle('red', 30, True)
+Draw_wing('red', 60, (80, 70))
+
+Draw_wing('red', 60, (-80, 70))
+
+Draw_wing('red', 30, (50, 10))
+
+Draw_wing('red', 30, (-50, 10))
+
 
 # внутренние
-t.penup()
-t.goto(80, 130)
-t.pendown()
-Draw_circle('blue', 30, True)
+Draw_wing('blue', 30, (80, 130))
 
-t.penup()
-t.goto(-80, 130)
-t.pendown()
-Draw_circle('blue', 30, True)
+Draw_wing('blue', 30, (-80, 130))
 
+Draw_wing('blue', 15, (50, 40))
 
-t.penup()
-t.goto(50, 40)
-t.pendown()
-Draw_circle('blue', 15, True)
-
-t.penup()
-t.goto(-50, 40)
-t.pendown()
-Draw_circle('blue', 15, True)
+Draw_wing('blue', 15, (-50, 40))
 
 
 
