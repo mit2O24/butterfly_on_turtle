@@ -12,8 +12,6 @@ def Draw_circle(color, size, is_fill):
 
     t.color(color)
     t.circle(size)
-    if is_fill: t.fillcolor(color)
-
     if is_fill: t.end_fill()
 
 t.pendown()
